@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helder Carneiro — Representante Oficial TM Leader Contract em Portugal</title>
+    <meta
+      name="description"
+      content="Helder Carneiro — Representante exclusivo da TM Leader Contract em Portugal. Mobiliário de luxo e soluções contract para hotelaria, restauração e projetos residenciais premium."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=MuseoModerno:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      .home-hero {
+        position: relative;
+        width: 100%;
+        height: 100svh;
+        min-height: 600px;
+        max-height: 960px;
+      }
+      @supports (height: 100dvh) {
+        .home-hero {
+          height: 100dvh;
+        }
+      }
+      @media (max-width: 767px) {
+        .home-hero {
+          height: 84svh;
+          min-height: 0;
+          max-height: none;
+        }
+        @supports (height: 100dvh) {
+          .home-hero {
+            height: 84dvh;
+          }
+        }
+      }
+      .home-hero__media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        background: #0a0a0a;
+      }
+      .home-hero__video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        z-index: 0;
+      }
+      .home-hero-scroll {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+        padding: 0.5rem;
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.9;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+      }
+      .home-hero-scroll:hover {
+        opacity: 1;
+        transform: translateX(-50%) translateY(2px);
+      }
+      .home-hero-scroll__label {
+        font-size: 0.6875rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+      }
+      .home-hero-scroll__icon {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        background: rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: home-hero-scroll-bounce 2s ease-in-out infinite;
+      }
+      @keyframes home-hero-scroll-bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(5px);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .home-hero-scroll__icon {
+          animation: none;
+        }
+      }
+      .home-products {
+        padding-top: clamp(4rem, 10vw, 7rem);
+        padding-bottom: clamp(3.5rem, 8vw, 6rem);
+      }
+      .products-carousel {
+        position: relative;
+        margin-top: 0.5rem;
+      }
+      .products-carousel__nav {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .products-carousel__btn {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: var(--bg-main);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.25s ease, transform 0.2s ease, border-color 0.25s ease;
+      }
+      .products-carousel__btn:hover:not(:disabled) {
+        background: #000;
+        color: #fff;
+        border-color: #000;
+        transform: scale(1.04);
+      }
+      .products-carousel__btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+      }
+      .products-carousel__counter {
+        font-size: 0.875rem;
+        font-variant-numeric: tabular-nums;
+        color: var(--text-secondary);
+        min-width: 4.5rem;
+        text-align: center;
+      }
+      .products-carousel__viewport {
+        overflow: hidden;
+        touch-action: pan-y;
+        margin-inline: -1.5rem;
+        padding-inline: 1.5rem;
+        padding-block: 0.75rem 0.25rem;
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          #000 6%,
+          #000 94%,
+          transparent 100%
+        );
+        mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          #000 6%,
+          #000 94%,
+          transparent 100%
+        );
+      }
+      @media (min-width: 768px) {
+        .products-carousel__viewport {
+          margin-inline: 0;
+          padding-inline: 0;
+          -webkit-mask-image: none;
+          mask-image: none;
+        }
+      }
+      .products-carousel__track {
+        display: flex;
+        gap: 1.25rem;
+        will-change: transform;
+        transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        padding-block: 0.5rem 1.75rem;
+        padding-inline: 0.5rem;
+      }
+      .products-carousel__slide {
+        flex: 0 0 min(78vw, 300px);
+        transition: opacity 0.5s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        opacity: 0.45;
+        transform: scale(0.94);
+        pointer-events: auto;
+      }
+      @media (min-width: 768px) {
+        .products-carousel__slide {
+          flex: 0 0 calc((100% - 2.5rem) / 3);
+          max-width: 360px;
+        }
+      }
+      .products-carousel__slide.is-active {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .home-product-card {
+        display: block;
+        background: var(--bg-card);
+        border-radius: 28px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        transition: border-color 0.3s ease;
+      }
+      .products-carousel__slide.is-active .home-product-card {
+        border-radius: 28px;
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+      .home-product-card:hover .home-product-card__img img {
+        transform: scale(1.06);
+      }
+      .home-product-card__img {
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
+        background: #e8e8e6;
+      }
+      .home-product-card__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .home-product-card__meta {
+        padding: 1.35rem 1.25rem 1.5rem;
+      }
+      .home-product-card__name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+      .home-product-card__cat {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        margin-top: 0.4rem;
+      }
+      .home-product-card__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        opacity: 0;
+        transform: translateY(6px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+      }
+      .products-carousel__slide.is-active .home-product-card__cta {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .products-carousel__progress {
+        margin-top: 1.5rem;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.08);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .products-carousel__progress-bar {
+        height: 100%;
+        width: 0;
+        background: #000;
+        border-radius: inherit;
+        transition: width 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .collection-card__media {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+      }
+      .collection-card img.collection-card__media {
+        z-index: 0;
+      }
+      .collection-card video.collection-card__media {
+        z-index: 1;
+      }
+      .collection-card:hover .collection-card__media:not(.is-hidden) {
+        transform: scale(1.05);
+      }
+      .collection-card__media.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .collection-card video.collection-card__media {
+        opacity: 0;
+      }
+      .collection-card video.collection-card__media:not(.is-hidden) {
+        opacity: 1;
+      }
+      .collection-card picture.collection-card__media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        display: block;
+        margin: 0;
+      }
+      .collection-card picture.collection-card__media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .collection-card:hover picture.collection-card__media img {
+        transform: scale(1.05);
+      }
+      @media (max-width: 767px) {
+        .collection-card video.collection-card__media {
+          display: none !important;
+        }
+      }
+      .exhibitions-section__content {
+        position: relative;
+        z-index: 10;
+      }
+      .collections-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      @media (min-width: 768px) {
+        .collections-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .collections-grid .collection-card--wide {
+          grid-column: 1 / -1;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[var(--bg-main)] text-[var(--foreground)] font-sans leading-relaxed"
+  >
+    <div id="navbar-container"></div>
+
+    <main class="overflow-x-hidden">
+      <!-- Hero — vídeo Milano recap (sem carrossel) -->
+      <section class="relative w-full overflow-hidden home-hero">
+        <div class="home-hero__media" id="home-hero-media">
+          <video
+            id="home-hero-video"
+            class="home-hero__video"
+            muted
+            loop
+            playsinline
+            autoplay
+            preload="auto"
+            poster="/assets/tm/banner-milano.webp"
+            aria-label="Milano 2026 — TM Leader Contract"
+          >
+            <source src="/assets/tm/hero-milano-2026.mp4" type="video/mp4" />
+            <source src="/assets/tm/hero-milano-2026.mov" type="video/quicktime" />
+          </video>
+        </div>
+        <a href="#produtos" class="home-hero-scroll" aria-label="Descer para ver conteúdo">
+          <span class="home-hero-scroll__label">Scroll</span>
+          <span class="home-hero-scroll__icon" aria-hidden="true">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </a>
+      </section>
+
+      <!-- Produtos TM Leader -->
+      <section id="produtos" class="home-products reveal">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-10">
+          <div class="products-carousel__header mb-10 md:mb-12" data-stagger data-stagger-step="0.1">
+            <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+              <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-3 mb-8">
+                  <span
+                    class="flex items-center justify-center w-8 h-8 rounded-[12px] bg-[var(--bg-card)]"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" />
+                    </svg>
+                  </span>
+                  <span class="text-base tracking-tight">TM Leader Contract</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08]">
+                  Produtos em Destaque
+                </h2>
+                <p class="text-lg text-[var(--text-secondary)] mt-6 md:mt-8 leading-relaxed">
+                  Selecione um produto para ver a ficha completa no site oficial da TM Leader Contract.
+                </p>
+              </div>
+              <div class="products-carousel__nav shrink-0" aria-label="Navegação do carrossel">
+                <button
+                  type="button"
+                  class="products-carousel__btn"
+                  id="products-carousel-prev"
+                  aria-label="Produto anterior"
+                >
+                  <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <span class="products-carousel__counter" id="products-carousel-counter">01 / 06</span>
+                <button
+                  type="button"
+                  class="products-carousel__btn"
+                  id="products-carousel-next"
+                  aria-label="Produto seguinte"
+                >
+                  <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="products-carousel" id="products-carousel">
+            <div class="products-carousel__viewport" id="products-carousel-viewport">
+              <div class="products-carousel__track" id="products-carousel-track"></div>
+            </div>
+            <div class="products-carousel__progress" aria-hidden="true">
+              <div class="products-carousel__progress-bar" id="products-carousel-progress"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sobre a Empresa -->
+      <section
+        class="reveal max-w-[1200px] mx-auto px-6 md:px-10 py-14 md:py-20"
+      >
+        <div class="grid md:grid-cols-[1fr_1.1fr] gap-12 md:gap-16 items-start">
+          <div class="pt-4">
+            <div class="inline-flex items-center gap-3 mb-8">
+              <span
+                class="flex items-center justify-center w-8 h-8 rounded-[12px] bg-[var(--bg-card)]"
+              >
+                <svg
+                  class="w-4 h-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </span>
+              <span class="text-base tracking-tight">Sobre a Empresa</span>
+            </div>
+            <h2 class="text-4xl md:text-6xl mb-8">
+              TM Leader Contract em Portugal.
+            </h2>
+            <p
+              class="text-lg text-[var(--text-secondary)] max-w-[500px] mb-10 leading-relaxed"
+            >
+              Representante exclusivo da TM Leader Contract — mobiliário contract
+              para hotelaria, restauração e projetos premium, com experiência no
+              setor e acompanhamento à medida.
+            </p>
+            <a
+              href="https://www.tmleadercontract.com/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 rounded-full font-medium transition-transform hover:scale-[1.02] bg-black text-white px-7 py-3"
+            >
+              <span>Conhecer a TM Leader Contract</span>
+            </a>
+          </div>
+          <div>
+            <div
+              class="rounded-[32px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+            >
+              <img
+                src="/assets/tm/banner-pure-identity.webp"
+                alt="Mobiliário TM Leader Contract"
+                class="w-full aspect-[5/4] object-cover"
+                data-parallax="10"
+              />
+            </div>
+            <div
+              class="grid grid-cols-3 gap-6 mt-10"
+              data-stagger
+              data-stagger-step="0.12"
+            >
+              <div>
+                <p
+                  class="text-2xl md:text-3xl font-bold"
+                  data-counter="33"
+                  data-counter-suffix="+"
+                >
+                  33+
+                </p>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">
+                  Anos de Experiência
+                </p>
+              </div>
+              <div>
+                <p class="text-2xl md:text-3xl font-bold">PT</p>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">
+                  Representação Exclusiva
+                </p>
+              </div>
+              <div>
+                <p class="text-2xl md:text-3xl font-bold">TM</p>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">
+                  Leader Contract
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Coleções (destaque) -->
+      <section class="reveal max-w-[1200px] mx-auto px-6 md:px-10 py-14 md:py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div>
+            <div class="inline-flex items-center gap-3 mb-8">
+              <span
+                class="flex items-center justify-center w-8 h-8 rounded-[12px] bg-[var(--bg-card)]"
+              >
+                <svg
+                  class="w-4 h-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </span>
+              <span class="text-base tracking-tight">Coleções</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl max-w-xl font-semibold tracking-tight leading-[1.08]">
+              As coleções TM Leader Contract.
+            </h2>
+            <p class="text-[var(--text-secondary)] mt-4 max-w-lg leading-relaxed">
+              Outdoor, Pure Identity, New Icons e as últimas novidades em mobiliário contract.
+            </p>
+          </div>
+          <a
+            href="/projetos/"
+            class="inline-flex items-center gap-2 text-sm font-medium hover:opacity-70 transition-opacity shrink-0"
+          >
+            Ver todas as coleções
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+        <div
+          id="home-destaque-grid"
+          class="collections-grid"
+          data-stagger
+          data-stagger-step="0.1"
+        ></div>
+      </section>
+
+      <!-- Agenda TM (feiras e showrooms) -->
+      <section
+        id="exhibitions-section"
+        class="reveal relative min-h-[70vh] md:min-h-[90vh] flex flex-col justify-center text-white overflow-hidden py-16 md:py-28"
+      >
+        <div class="absolute inset-0 z-0 pointer-events-none">
+          <picture class="block w-full h-full">
+            <source
+              id="exhibitions-bg-source-mobile"
+              media="(max-width: 767px)"
+              srcset="/assets/tm/banner-outdoor-mobile.webp"
+            />
+            <img
+              id="exhibitions-bg-image"
+              src="/assets/tm/banner-outdoor-1.webp"
+              alt=""
+              class="w-full h-full object-cover"
+              data-parallax="14"
+            />
+          </picture>
+          <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        <div class="exhibitions-section__content max-w-[1200px] mx-auto px-6 md:px-10 w-full mb-12">
+          <div
+            class="grid grid-cols-1 md:grid-cols-[0.4fr_1fr] gap-4 md:gap-12 items-start"
+          >
+            <div>
+              <div class="inline-flex items-center gap-3 mb-8">
+                <span
+                  class="flex items-center justify-center w-8 h-8 rounded-[12px] bg-white/10"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                  </svg>
+                </span>
+                <span class="text-base tracking-tight text-white"
+                  >Agenda TM</span
+                >
+              </div>
+            </div>
+            <div>
+              <h2
+                class="text-3xl md:text-5xl lg:text-6xl text-white leading-[1.1]"
+              >
+                Feiras e eventos TM.
+              </h2>
+              <p class="text-white/60 mt-4 max-w-xl leading-relaxed text-base md:text-lg">
+                Salone del Mobile, feiras internacionais e showrooms — design, durabilidade, exclusividade.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="exhibitions-section__content max-w-[1200px] mx-auto px-6 md:px-10 w-full mb-10">
+          <div class="ml-0 md:ml-[calc(40%+24px)] flex items-center gap-4">
+            <span
+              id="project-current-num"
+              class="text-sm tabular-nums text-white/80"
+              >01</span
+            >
+            <div class="flex-1 h-px bg-white/20 relative max-w-md">
+              <div
+                id="progress-bar"
+                class="absolute left-0 top-0 h-px bg-white transition-all duration-500"
+                style="width: 20%"
+              ></div>
+            </div>
+            <span id="project-total-num" class="text-sm tabular-nums text-white/80">06</span>
+          </div>
+        </div>
+        <div class="exhibitions-section__content max-w-[1200px] mx-auto px-6 md:px-10 w-full">
+          <div class="ml-0 md:ml-[calc(40%+24px)] max-w-xl">
+            <a
+              id="project-link"
+              href="/projeto/?id=outdoor"
+              class="group block rounded-2xl overflow-hidden"
+              style="
+                background: rgba(30, 30, 30, 0.6);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+              "
+            >
+              <div class="flex flex-col sm:flex-row gap-0">
+                <div
+                  class="flex-1 p-6 md:p-8 flex flex-col justify-between min-h-[200px]"
+                >
+                  <div>
+                    <h3
+                      id="project-title"
+                      class="text-xl md:text-2xl font-medium text-white mb-2"
+                    >
+                      Outdoor Collection
+                    </h3>
+                    <p
+                      id="project-short"
+                      class="text-white/60 text-sm leading-relaxed max-w-[280px]"
+                    >
+                      A primeira coleção exterior contract da TM Leader Contract.
+                    </p>
+                  </div>
+                  <span
+                    class="inline-flex items-center gap-2 mt-6 text-sm font-medium text-white"
+                  >
+                    Ver evento
+                    <span
+                      class="inline-flex items-center justify-center w-6 h-6 rounded-full border border-white/30"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M7 7h10v10" />
+                        <path d="M7 17 17 7" />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="w-full sm:w-[180px] md:w-[220px] shrink-0 h-[160px] sm:h-auto"
+                >
+                  <img
+                    id="project-image"
+                    src="/assets/tm/banner-outdoor-1.webp"
+                    alt="Outdoor Collection"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="exhibitions-section__content max-w-[1200px] mx-auto px-6 md:px-10 w-full mt-8">
+          <div class="ml-0 md:ml-[calc(40%+24px)] flex gap-2">
+            <button
+              id="project-prev"
+              class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"
+              disabled
+              style="opacity: 0.3"
+              aria-label="Anterior"
+            >
+              <svg
+                class="w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+            <button
+              id="project-next"
+              class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"
+              aria-label="Seguinte"
+            >
+              <svg
+                class="w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Final -->
+      <section class="reveal max-w-[1200px] mx-auto px-6 md:px-10 py-14 md:py-20">
+        <div
+          class="bg-[#111111] text-white rounded-[40px] px-8 md:px-16 py-14 md:py-20 text-center"
+        >
+          <p
+            class="text-xs uppercase tracking-[0.2em] text-white/50 mb-6"
+          >
+            Vamos trabalhar juntos
+          </p>
+          <h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-6 max-w-2xl mx-auto leading-[1.1]">
+            Agende uma reunião e descubra as soluções TM Leader Contract para o seu projeto.
+          </h2>
+          <p class="text-white/65 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+            Estamos disponíveis para arquitetos, designers de interiores e
+            promotores que procuram mobiliário contract com exclusividade e
+            acompanhamento experiente.
+          </p>
+          <a
+            href="/contactos/"
+            class="inline-flex items-center gap-3 rounded-full font-medium transition-transform hover:scale-[1.02] bg-white text-black px-8 py-3"
+          >
+            <span>Entrar em Contacto</span>
+          </a>
+        </div>
+      </section>
+
+      <div id="faq-container"></div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/responsive-images.js"></script>
+    <script src="/js/exhibitions.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

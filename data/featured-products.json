@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Neil",
+    "category": "Cadeira",
+    "image": "/assets/tm/sillon-neil.webp",
+    "url": "https://www.tmleadercontract.com/en/p/neil/"
+  },
+  {
+    "name": "Arco",
+    "category": "Cadeira",
+    "image": "/assets/tm/sillon-arco.webp",
+    "url": "https://www.tmleadercontract.com/en/p/arco/"
+  },
+  {
+    "name": "Zira",
+    "category": "Butaca",
+    "image": "/assets/tm/outdoor-capa-2.webp",
+    "url": "https://www.tmleadercontract.com/en/p/zira-butaca/"
+  },
+  {
+    "name": "Sagitarius",
+    "category": "Butaca",
+    "image": "/assets/tm/outdoor-capa-3.webp",
+    "url": "https://www.tmleadercontract.com/en/p/sagitarius-butaca/"
+  },
+  {
+    "name": "Ember",
+    "category": "Butaca",
+    "image": "/assets/tm/outdoor-capa-3b.webp",
+    "url": "https://www.tmleadercontract.com/en/p/ember-butaca/"
+  },
+  {
+    "name": "Nuens",
+    "category": "Cadeira",
+    "image": "/assets/tm/product-a.webp",
+    "url": "https://www.tmleadercontract.com/en/p/nuens/"
+  }
+]

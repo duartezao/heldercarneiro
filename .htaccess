@@ -1,0 +1,12 @@
+# Apache: URLs limpas e redirecionamentos dos ficheiros antigos
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteRule ^projects\.html$ /projetos/ [R=301,L]
+  RewriteRule ^about\.html$ https://www.tmleadercontract.com/en/ [R=302,L]
+  RewriteRule ^sobre/?$ https://www.tmleadercontract.com/en/ [R=302,L]
+  RewriteRule ^company/?$ https://www.tmleadercontract.com/en/ [R=302,L]
+  RewriteRule ^contact\.html$ /contactos/ [R=301,L]
+  RewriteRule ^project\.html$ /projeto/ [R=301,L,QSA]
+</IfModule>

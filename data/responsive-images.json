@@ -1,0 +1,25 @@
+{
+  "note": "Variantes mobile encontradas na biblioteca de media TM (wp-json). Pure Identity e New Icons usam o mesmo ficheiro em desktop e mobile no site deles.",
+  "assets": {
+    "hero": {
+      "desktop": { "video": "/assets/tm/hero-milano-2026.mp4", "poster": "/assets/tm/banner-milano.webp" },
+      "mobile": "/assets/tm/hero-milano-mobile.webp"
+    },
+    "banner-outdoor-1": {
+      "desktop": "/assets/tm/banner-outdoor-1.webp",
+      "mobile": "/assets/tm/banner-outdoor-mobile.webp"
+    },
+    "banner-milano": {
+      "desktop": "/assets/tm/banner-milano.webp",
+      "mobile": "/assets/tm/banner-milano-mobile.webp"
+    },
+    "banner-pure-identity": {
+      "desktop": "/assets/tm/banner-pure-identity.webp",
+      "mobile": null
+    },
+    "banner-new-icons": {
+      "desktop": "/assets/tm/banner-new-icons.webp",
+      "mobile": null
+    }
+  }
+}
