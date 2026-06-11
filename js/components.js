@@ -68,9 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
         </nav>
         <div class="ryu-mobile-menu__meta">
           <p class="ryu-mobile-menu__address">
-            Representante oficial TM Leader Contract em Portugal
+            Helder Carneiro · Consultor TM Leader Contract
           </p>
-          <p class="ryu-mobile-menu__phone">Rebordosa · Paredes</p>
+          <p class="ryu-mobile-menu__phone">Paredes · Porto</p>
           <p class="ryu-mobile-menu__copy">© 2026 Helder Carneiro</p>
         </div>
       </div>
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="text-white/50 text-xs tracking-widest uppercase mt-1 block">TM Leader Contract · Portugal</span>
             </a>
             <p class="text-white/60 max-w-[400px] leading-relaxed mb-8">
-              Representante oficial e parceiro exclusivo da TM Leader Contract em Portugal. Mobiliário de luxo e soluções contract para projetos residenciais, hotelaria e hospitality.
+              Helder Carneiro — consultor oficial TM Leader Contract e fundador da empresa em Portugal. Mobiliário de luxo e soluções contract para projetos residenciais, hotelaria e hospitality.
             </p>
           </div>
           <div>
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div>
             <p class="text-white/60 text-sm mb-6">Contactos</p>
             <ul class="space-y-3">
-              <li class="text-white/60 leading-relaxed">Rebordosa, Paredes<br>Porto, Portugal</li>
+              <li class="text-white/60 leading-relaxed">Paredes<br>Porto, Portugal</li>
               <li><a href="mailto:geral@heldercarneiro.pt" class="text-white/60 hover:text-white transition-colors">geral@heldercarneiro.pt</a></li>
               <li><a href="https://www.tmleadercontract.com" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors">tmleadercontract.com</a></li>
             </ul>
@@ -126,18 +126,18 @@ document.addEventListener('DOMContentLoaded', () => {
               </span>
               <span class="text-base tracking-tight">Perguntas Frequentes</span>
             </div>
-            <h2 class="text-4xl md:text-5xl mb-10">Respostas sobre a representação TM Leader Contract em Portugal.</h2>
+            <h2 class="text-4xl md:text-5xl mb-10">Respostas sobre a consultoria TM Leader Contract em Portugal.</h2>
             <div class="rounded-3xl overflow-hidden relative w-[min(100%,280px)] aspect-[3/4] mb-6 bg-[#1a1a1a]">
               <img
                 src="/assets/helder-carneiro.png"
-                alt="Helder Carneiro — representante TM Leader Contract em Portugal"
+                alt="Helder Carneiro — consultor TM Leader Contract em Portugal"
                 class="absolute inset-0 w-full h-full object-cover"
                 style="object-position: center 30%;"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent pointer-events-none"></div>
               <div class="absolute bottom-6 left-6 text-white pointer-events-none">
                 <p class="font-semibold text-lg" style="font-family: 'MuseoModerno', sans-serif;">Helder Carneiro</p>
-                <p class="text-white/80 text-sm">Representante Oficial · Portugal</p>
+                <p class="text-white/80 text-sm">Consultor · Fundador</p>
               </div>
             </div>
             <p class="text-[var(--text-secondary)]">Tem um projeto em mente?</p>
@@ -149,14 +149,14 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="flex flex-col gap-2">
             <div class="bg-[var(--bg-card)] rounded-2xl px-6 py-5 transition-all">
               <button type="button" class="accordion-btn w-full flex items-center justify-between text-left">
-                <span class="text-base md:text-lg font-medium">Quem é o representante oficial da TM Leader Contract em Portugal?</span>
+                <span class="text-base md:text-lg font-medium">Quem é Helder Carneiro?</span>
                 <svg class="accordion-cross w-5 h-5 shrink-0 hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 <svg class="accordion-plus w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
               </button>
               <div class="accordion-content grid transition-all duration-500 ease-out" style="grid-template-rows: 0fr">
                 <div class="overflow-hidden">
                   <p class="pt-4 text-[var(--text-secondary)] leading-relaxed">
-                    A Helder Carneiro é o parceiro exclusivo da TM Leader Contract em Portugal, responsável pela comercialização e promoção das coleções e soluções de mobiliário contract para arquitetos, designers de interiores e promotores.
+                    Helder Carneiro é o consultor oficial da TM Leader Contract em Portugal e fundador da empresa — dono da consultoria que acompanha arquitetos, designers de interiores e promotores na especificação e comercialização de mobiliário contract.
                   </p>
                 </div>
               </div>
@@ -237,4 +237,53 @@ document.addEventListener('DOMContentLoaded', () => {
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
   });
+
+  if (!document.getElementById('whatsapp-float')) {
+    const waMessage = encodeURIComponent(
+      'Olá Helder, gostaria de saber mais sobre as soluções TM Leader Contract.'
+    );
+    const wa = document.createElement('a');
+    wa.id = 'whatsapp-float';
+    wa.href = 'https://wa.me/351933612177?text=' + waMessage;
+    wa.target = '_blank';
+    wa.rel = 'noopener noreferrer';
+    wa.setAttribute('aria-label', 'Contactar via WhatsApp');
+    wa.innerHTML = `
+      <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor" aria-hidden="true">
+        <path d="M16.001 3.2C9.064 3.2 3.2 9.063 3.2 16c0 2.257.6 4.46 1.74 6.404L3.2 28.8l6.56-1.715A12.74 12.74 0 0 0 16 28.8c6.937 0 12.8-5.863 12.8-12.8S22.938 3.2 16.001 3.2zm0 23.2a10.36 10.36 0 0 1-5.28-1.444l-.378-.224-3.893 1.018 1.04-3.79-.247-.39A10.32 10.32 0 0 1 5.6 16c0-5.735 4.666-10.4 10.401-10.4 5.734 0 10.399 4.665 10.399 10.4 0 5.734-4.665 10.4-10.399 10.4zm5.7-7.79c-.312-.156-1.846-.91-2.132-1.014-.286-.104-.494-.156-.702.157-.208.312-.806 1.013-.988 1.221-.182.208-.364.234-.676.078-.312-.156-1.318-.486-2.51-1.548-.928-.828-1.554-1.85-1.736-2.162-.182-.312-.02-.48.137-.636.141-.14.312-.364.468-.546.156-.182.208-.312.312-.52.104-.208.052-.39-.026-.546-.078-.156-.702-1.692-.962-2.316-.253-.608-.51-.526-.702-.536l-.598-.01c-.208 0-.546.078-.832.39-.286.312-1.092 1.066-1.092 2.602s1.118 3.018 1.274 3.226c.156.208 2.2 3.36 5.33 4.712.745.322 1.326.514 1.78.658.748.238 1.428.204 1.966.124.6-.09 1.846-.754 2.106-1.482.26-.728.26-1.352.182-1.482-.078-.13-.286-.208-.598-.364z"/>
+      </svg>`;
+    document.body.appendChild(wa);
+
+    if (!document.getElementById('whatsapp-float-style')) {
+      const style = document.createElement('style');
+      style.id = 'whatsapp-float-style';
+      style.textContent = `
+        #whatsapp-float {
+          position: fixed;
+          right: clamp(1rem, 3vw, 1.75rem);
+          bottom: clamp(1rem, 3vw, 1.75rem);
+          z-index: 60;
+          width: 56px;
+          height: 56px;
+          border-radius: 999px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: #25d366;
+          color: #fff;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        #whatsapp-float:hover {
+          transform: scale(1.06);
+          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
+        }
+        #whatsapp-float:active { transform: scale(0.98); }
+        @media (prefers-reduced-motion: reduce) {
+          #whatsapp-float { transition: none; }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }
 });
