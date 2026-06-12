@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="text-white/50 text-xs tracking-widest uppercase mt-1 block">TM Leader Contract · Portugal</span>
             </a>
             <p class="text-white/60 max-w-[400px] leading-relaxed mb-8">
-              Helder Carneiro — consultor oficial TM Leader Contract e fundador da empresa em Portugal. Mobiliário de luxo e soluções contract para projetos residenciais, hotelaria e hospitality.
+              Helder Carneiro — consultor oficial TM Leader Contract em Portugal. Mobiliário de luxo e soluções contract para projetos residenciais, hotelaria e hospitality.
             </p>
           </div>
           <div>
