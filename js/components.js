@@ -36,7 +36,7 @@ function applyNavbarActiveStates() {
 document.addEventListener('DOMContentLoaded', () => {
   const navbarHTML = `
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[720px] rounded-[35px] nav-glass pl-6 pr-2 py-2 flex items-center justify-between">
-      <a href="/" class="leading-none" aria-label="Helder Carneiro — início">
+      <a href="/" class="leading-none" aria-label="Helder Carneiro, início">
         <span class="text-white font-semibold text-sm tracking-tight" style="font-family: 'MuseoModerno', sans-serif;">Helder Carneiro</span>
       </a>
       <div class="hidden md:flex items-center gap-8">
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </nav>
     <div id="mobile-menu" class="ryu-mobile-menu" aria-hidden="true">
       <div class="ryu-mobile-menu__inner">
-        <a href="/" class="ryu-mobile-menu__logo mb-6" aria-label="Helder Carneiro — início">
+        <a href="/" class="ryu-mobile-menu__logo mb-6" aria-label="Helder Carneiro, início">
           <span class="text-white font-semibold text-xl" style="font-family: 'MuseoModerno', sans-serif;">Helder Carneiro</span>
         </a>
         <nav class="ryu-mobile-menu__links">
@@ -82,12 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="max-w-[1200px] mx-auto px-6 md:px-10 pt-20 pb-10">
         <div class="grid grid-cols-1 md:grid-cols-[1.5fr_0.75fr_0.75fr] gap-10 md:gap-20">
           <div>
-            <a href="/" class="inline-block mb-6" aria-label="Helder Carneiro — início">
+            <a href="/" class="inline-block mb-6" aria-label="Helder Carneiro, início">
               <span class="text-white font-semibold text-xl block" style="font-family: 'MuseoModerno', sans-serif;">Helder Carneiro</span>
               <span class="text-white/50 text-xs tracking-widest uppercase mt-1 block">TM Leader Contract · Portugal</span>
             </a>
             <p class="text-white/60 max-w-[400px] leading-relaxed mb-8">
-              Helder Carneiro — consultor oficial TM Leader Contract em Portugal. Mobiliário de luxo e soluções contract para projetos residenciais, hotelaria e hospitality.
+              Helder Carneiro, consultor oficial TM Leader Contract em Portugal. Mobiliário e soluções contract para projetos residenciais, hotelaria e hospitality.
             </p>
           </div>
           <div>
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="flex flex-col md:flex-row justify-between gap-2 mt-8 text-sm text-white/40">
-          <span>© 2026, Helder Carneiro — Todos os direitos reservados</span>
+          <span>© 2026 Helder Carneiro. Todos os direitos reservados</span>
           <span>Site by Netarte</span>
         </div>
       </div>
@@ -130,14 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="rounded-3xl overflow-hidden relative w-[min(100%,280px)] aspect-[3/4] mb-6 bg-[#1a1a1a]">
               <img
                 src="/assets/helder-carneiro.png"
-                alt="Helder Carneiro — consultor TM Leader Contract em Portugal"
+                alt="Helder Carneiro, consultor TM Leader Contract em Portugal"
                 class="absolute inset-0 w-full h-full object-cover"
                 style="object-position: center 30%;"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent pointer-events-none"></div>
               <div class="absolute bottom-6 left-6 text-white pointer-events-none">
                 <p class="font-semibold text-lg" style="font-family: 'MuseoModerno', sans-serif;">Helder Carneiro</p>
-                <p class="text-white/80 text-sm">Consultor · Fundador</p>
+                <p class="text-white/80 text-sm">Consultor oficial · Portugal</p>
               </div>
             </div>
             <p class="text-[var(--text-secondary)]">Tem um projeto em mente?</p>
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="accordion-content grid transition-all duration-500 ease-out" style="grid-template-rows: 0fr">
                 <div class="overflow-hidden">
                   <p class="pt-4 text-[var(--text-secondary)] leading-relaxed">
-                    Helder Carneiro é o consultor oficial da TM Leader Contract em Portugal e fundador da empresa — dono da consultoria que acompanha arquitetos, designers de interiores e promotores na especificação e comercialização de mobiliário contract.
+                    Helder Carneiro é o consultor oficial da TM Leader Contract em Portugal. Acompanha e ajuda a desenvolver projetos com designers de interiores, arquitetos, lojas e promotores na especificação e comercialização de mobiliário contract.
                   </p>
                 </div>
               </div>
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="accordion-content grid transition-all duration-500 ease-out" style="grid-template-rows: 0fr">
                 <div class="overflow-hidden">
                   <p class="pt-4 text-[var(--text-secondary)] leading-relaxed">
-                    As coleções TM Leader Contract são concebidas para hotelaria, restauração, escritórios, espaços residenciais de luxo e qualquer projeto contract que exija durabilidade, design e conforto profissional.
+                    As coleções TM Leader Contract são concebidas para hotelaria, restauração, escritórios, espaços residenciais premium e qualquer projeto contract que exija durabilidade, design e conforto profissional.
                   </p>
                 </div>
               </div>

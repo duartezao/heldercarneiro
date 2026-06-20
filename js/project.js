@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       .join(' ')
       .slice(0, 160);
     document.getElementById('page-title').textContent =
-      project.title + ' — Exibição · Helder Carneiro';
+      project.title + ' · Exibição · Helder Carneiro';
     document.getElementById('meta-description').content = metaDesc;
 
     const heroImg = document.getElementById('proj-hero');

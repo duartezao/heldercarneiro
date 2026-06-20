@@ -337,7 +337,7 @@ function setupProductsCarousel(products) {
         class="home-product-card"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="${p.name} — ver no site TM Leader Contract"
+        aria-label="${p.name}, ver no site TM Leader Contract"
       >
         <div class="home-product-card__img">
           <img src="${p.image}" alt="${p.name}" loading="lazy" width="400" height="500" />
