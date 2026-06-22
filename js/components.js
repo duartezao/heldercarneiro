@@ -1,5 +1,5 @@
 /**
- * Navbar, footer e FAQ — Helder Carneiro
+ * Navbar, footer e FAQ — Hélder Carneiro
  * URLs: /, /company/, /projetos/, /contactos/, /projeto/?id=…
  */
 
@@ -36,8 +36,8 @@ function applyNavbarActiveStates() {
 document.addEventListener('DOMContentLoaded', () => {
   const navbarHTML = `
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[720px] rounded-[35px] nav-glass pl-6 pr-2 py-2 flex items-center justify-between">
-      <a href="/" class="leading-none" aria-label="Helder Carneiro, início">
-        <span class="text-white font-semibold text-sm tracking-tight" style="font-family: 'MuseoModerno', sans-serif;">Helder Carneiro</span>
+      <a href="/" class="leading-none" aria-label="Hélder Carneiro, início">
+        <span class="text-white font-semibold text-sm tracking-tight" style="font-family: 'MuseoModerno', sans-serif;">Hélder Carneiro</span>
       </a>
       <div class="hidden md:flex items-center gap-8">
         <a data-nav="projetos" href="/projetos/" class="nav-link-desktop text-base font-medium text-white transition-opacity hover:opacity-90">Exibições</a>
@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
     </nav>
     <div id="mobile-menu" class="ryu-mobile-menu" aria-hidden="true">
       <div class="ryu-mobile-menu__inner">
-        <a href="/" class="ryu-mobile-menu__logo mb-6" aria-label="Helder Carneiro, início">
-          <span class="text-white font-semibold text-xl" style="font-family: 'MuseoModerno', sans-serif;">Helder Carneiro</span>
+        <a href="/" class="ryu-mobile-menu__logo mb-6" aria-label="Hélder Carneiro, início">
+          <span class="text-white font-semibold text-xl" style="font-family: 'MuseoModerno', sans-serif;">Hélder Carneiro</span>
         </a>
         <nav class="ryu-mobile-menu__links">
           <a data-nav="projetos" href="/projetos/" class="nav-link-mobile">Exibições</a>
@@ -68,10 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </nav>
         <div class="ryu-mobile-menu__meta">
           <p class="ryu-mobile-menu__address">
-            Helder Carneiro · Consultor TM Leader Contract
+            Hélder Carneiro · Consultor TM Leader Contract
           </p>
           <p class="ryu-mobile-menu__phone">Paredes · Porto</p>
-          <p class="ryu-mobile-menu__copy">© 2026 Helder Carneiro</p>
+          <p class="ryu-mobile-menu__copy">© 2026 Hélder Carneiro</p>
         </div>
       </div>
     </div>
@@ -82,12 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="max-w-[1200px] mx-auto px-6 md:px-10 pt-20 pb-10">
         <div class="grid grid-cols-1 md:grid-cols-[1.5fr_0.75fr_0.75fr] gap-10 md:gap-20">
           <div>
-            <a href="/" class="inline-block mb-6" aria-label="Helder Carneiro, início">
-              <span class="text-white font-semibold text-xl block" style="font-family: 'MuseoModerno', sans-serif;">Helder Carneiro</span>
+            <a href="/" class="inline-block mb-6" aria-label="Hélder Carneiro, início">
+              <span class="text-white font-semibold text-xl block" style="font-family: 'MuseoModerno', sans-serif;">Hélder Carneiro</span>
               <span class="text-white/50 text-xs tracking-widest uppercase mt-1 block">TM Leader Contract · Portugal</span>
             </a>
             <p class="text-white/60 max-w-[400px] leading-relaxed mb-8">
-              Helder Carneiro, consultor oficial TM Leader Contract em Portugal. Mobiliário e soluções contract para projetos residenciais, hotelaria e hospitality.
+              Hélder Carneiro, consultor oficial TM Leader Contract em Portugal. Mobiliário e soluções contract para projetos residenciais, hotelaria e hospitality.
             </p>
           </div>
           <div>
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="flex flex-col md:flex-row justify-between gap-2 mt-8 text-sm text-white/40">
-          <span>© 2026 Helder Carneiro. Todos os direitos reservados</span>
+          <span>© 2026 Hélder Carneiro. Todos os direitos reservados</span>
           <span>Site by Netarte</span>
         </div>
       </div>
@@ -130,13 +130,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="rounded-3xl overflow-hidden relative w-[min(100%,280px)] aspect-[3/4] mb-6 bg-[#1a1a1a]">
               <img
                 src="/assets/helder-carneiro.png"
-                alt="Helder Carneiro, consultor TM Leader Contract em Portugal"
+                alt="Hélder Carneiro, consultor TM Leader Contract em Portugal"
                 class="absolute inset-0 w-full h-full object-cover"
                 style="object-position: center 30%;"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent pointer-events-none"></div>
               <div class="absolute bottom-6 left-6 text-white pointer-events-none">
-                <p class="font-semibold text-lg" style="font-family: 'MuseoModerno', sans-serif;">Helder Carneiro</p>
+                <p class="font-semibold text-lg" style="font-family: 'MuseoModerno', sans-serif;">Hélder Carneiro</p>
                 <p class="text-white/80 text-sm">Consultor oficial · Portugal</p>
               </div>
             </div>
@@ -149,14 +149,14 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="flex flex-col gap-2">
             <div class="bg-[var(--bg-card)] rounded-2xl px-6 py-5 transition-all">
               <button type="button" class="accordion-btn w-full flex items-center justify-between text-left">
-                <span class="text-base md:text-lg font-medium">Quem é Helder Carneiro?</span>
+                <span class="text-base md:text-lg font-medium">Quem é Hélder Carneiro?</span>
                 <svg class="accordion-cross w-5 h-5 shrink-0 hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 <svg class="accordion-plus w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
               </button>
               <div class="accordion-content grid transition-all duration-500 ease-out" style="grid-template-rows: 0fr">
                 <div class="overflow-hidden">
                   <p class="pt-4 text-[var(--text-secondary)] leading-relaxed">
-                    Helder Carneiro é o consultor oficial da TM Leader Contract em Portugal. Acompanha e ajuda a desenvolver projetos com designers de interiores, arquitetos, lojas e promotores na especificação e comercialização de mobiliário contract.
+                    Hélder Carneiro é o consultor oficial da TM Leader Contract em Portugal. Acompanha e ajuda a desenvolver projetos com designers de interiores, arquitetos, lojas e promotores na especificação e comercialização de mobiliário contract.
                   </p>
                 </div>
               </div>
@@ -191,14 +191,14 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="bg-[var(--bg-card)] rounded-2xl px-6 py-5 transition-all">
               <button type="button" class="accordion-btn w-full flex items-center justify-between text-left">
-                <span class="text-base md:text-lg font-medium">A Helder Carneiro acompanha o projeto do início ao fim?</span>
+                <span class="text-base md:text-lg font-medium">A Hélder Carneiro acompanha o projeto do início ao fim?</span>
                 <svg class="accordion-cross w-5 h-5 shrink-0 hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 <svg class="accordion-plus w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
               </button>
               <div class="accordion-content grid transition-all duration-500 ease-out" style="grid-template-rows: 0fr">
                 <div class="overflow-hidden">
                   <p class="pt-4 text-[var(--text-secondary)] leading-relaxed">
-                    Sim. Com mais de 33 anos de experiência no setor do mobiliário, Helder Carneiro acompanha profissionais e promotores na seleção de peças, consultoria técnica e apoio à especificação para cada projeto.
+                    Sim. Com mais de 33 anos de experiência no setor do mobiliário, Hélder Carneiro acompanha profissionais e promotores na seleção de peças, consultoria técnica e apoio à especificação para cada projeto.
                   </p>
                 </div>
               </div>
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!document.getElementById('whatsapp-float')) {
     const waMessage = encodeURIComponent(
-      'Olá Helder, gostaria de saber mais sobre as soluções TM Leader Contract.'
+      'Olá Hélder, gostaria de saber mais sobre as soluções TM Leader Contract.'
     );
     const wa = document.createElement('a');
     wa.id = 'whatsapp-float';
