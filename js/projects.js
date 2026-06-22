@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       html += `
         <div class="reveal">
           <a href="/projeto/?id=${encodeURIComponent(project.id)}" class="project-card group block relative rounded-3xl overflow-hidden bg-[var(--bg-card)]" style="aspect-ratio: 5 / 4;" aria-label="${project.title}">
-            <img src="${img}" alt="${project.title}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105" />
+            <img src="${img}" alt="${project.title}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105" loading="lazy" decoding="async" width="800" height="640" />
             <div class="project-card__shade pointer-events-none absolute inset-0" aria-hidden="true"></div>
             <span class="project-card__arrow absolute right-5 inline-flex w-11 h-11 rounded-full backdrop-blur text-white items-center justify-center transition-transform duration-300 group-hover:scale-110" style="top: 1.25rem; background: rgba(0,0,0,0.45);">
               <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>

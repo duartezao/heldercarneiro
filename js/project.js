@@ -22,9 +22,53 @@ document.addEventListener('DOMContentLoaded', async () => {
       .filter(Boolean)
       .join(' ')
       .slice(0, 160);
-    document.getElementById('page-title').textContent =
-      project.title + ' · Exibição · Hélder Carneiro';
+    const pageTitle = project.title + ' · Exibição · Hélder Carneiro';
+    document.getElementById('page-title').textContent = pageTitle;
     document.getElementById('meta-description').content = metaDesc;
+
+    const projectPath = '/projeto/?id=' + encodeURIComponent(projectId);
+    const heroImage = project.images?.hero || project.cardImage || '/assets/tm/banner-milano.webp';
+
+    if (window.HcSeo && window.HcSeo.setPageMeta) {
+      window.HcSeo.setPageMeta({
+        title: pageTitle,
+        description: metaDesc,
+        path: projectPath,
+        image: heroImage,
+        type: 'article',
+      });
+    }
+
+    const canonicalEl = document.getElementById('canonical-link');
+    if (canonicalEl) {
+      canonicalEl.setAttribute('href', window.HcSeo ? window.HcSeo.absoluteUrl(projectPath) : projectPath);
+    }
+
+    const eventSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'Event',
+      name: project.title,
+      description: metaDesc,
+      image: window.HcSeo ? window.HcSeo.absoluteUrl(heroImage) : heroImage,
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      location: {
+        '@type': 'Place',
+        name: project.location || 'Portugal',
+      },
+      organizer: {
+        '@type': 'Organization',
+        name: 'TM Leader Contract',
+        url: 'https://www.tmleadercontract.com',
+      },
+    };
+    let schemaEl = document.getElementById('project-jsonld');
+    if (!schemaEl) {
+      schemaEl = document.createElement('script');
+      schemaEl.type = 'application/ld+json';
+      schemaEl.id = 'project-jsonld';
+      document.head.appendChild(schemaEl);
+    }
+    schemaEl.textContent = JSON.stringify(eventSchema);
 
     const heroImg = document.getElementById('proj-hero');
     const img1 = document.getElementById('proj-img-1');
@@ -97,9 +141,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     const captions = project.images.captions || {};
-    const setGalleryImage = (imgEl, capEl, key, src) => {
+    const setGalleryImage = (imgEl, capEl, key, src, lazy) => {
       imgEl.src = src;
       imgEl.alt = project.title;
+      if (lazy) {
+        imgEl.loading = 'lazy';
+        imgEl.decoding = 'async';
+      } else {
+        imgEl.removeAttribute('loading');
+        imgEl.fetchPriority = 'high';
+      }
       const cap = captions[key];
       if (capEl) {
         if (cap) {
@@ -111,9 +162,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     };
 
-    setGalleryImage(img1, document.getElementById('proj-cap-1'), 'detail1', project.images.detail1);
-    setGalleryImage(img2, document.getElementById('proj-cap-2'), 'detail2', project.images.detail2);
-    setGalleryImage(img3, document.getElementById('proj-cap-3'), 'detail3', project.images.detail3);
+    setGalleryImage(img1, document.getElementById('proj-cap-1'), 'detail1', project.images.detail1, true);
+    setGalleryImage(img2, document.getElementById('proj-cap-2'), 'detail2', project.images.detail2, true);
+    setGalleryImage(img3, document.getElementById('proj-cap-3'), 'detail3', project.images.detail3, true);
 
     const catalogLink = document.getElementById('proj-catalog');
     if (catalogLink && project.catalogPdf) {

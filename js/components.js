@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2 class="text-4xl md:text-5xl mb-10">Respostas sobre a consultoria TM Leader Contract em Portugal.</h2>
             <div class="rounded-3xl overflow-hidden relative w-[min(100%,280px)] aspect-[3/4] mb-6 bg-[#1a1a1a]">
               <img
-                src="/assets/helder-carneiro.png"
+                src="/assets/helder-carneiro.webp"
                 alt="Hélder Carneiro, consultor TM Leader Contract em Portugal"
                 class="absolute inset-0 w-full h-full object-cover"
                 style="object-position: center 30%;"

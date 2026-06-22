@@ -8,6 +8,23 @@
       name="description"
       content="Hélder Carneiro, consultor oficial da TM Leader Contract em Portugal. Mobiliário e soluções contract para hotelaria, restauração e projetos residenciais premium."
     />
+    <link rel="canonical" href="https://www.heldercarneiro.pt/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#111111" />
+    <link rel="icon" href="/assets/logo_helder_carneiro_symbol.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/helder-carneiro.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:site_name" content="Hélder Carneiro" />
+    <meta property="og:title" content="Hélder Carneiro, Consultor Oficial TM Leader Contract em Portugal" />
+    <meta property="og:description" content="Hélder Carneiro, consultor oficial da TM Leader Contract em Portugal. Mobiliário contract para hotelaria, restauração e projetos residenciais." />
+    <meta property="og:url" content="https://www.heldercarneiro.pt/" />
+    <meta property="og:image" content="https://www.heldercarneiro.pt/assets/tm/banner-milano.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hélder Carneiro, Consultor Oficial TM Leader Contract em Portugal" />
+    <meta name="twitter:description" content="Consultor oficial TM Leader Contract em Portugal. Mobiliário e soluções contract para hotelaria e projetos premium." />
+    <meta name="twitter:image" content="https://www.heldercarneiro.pt/assets/tm/banner-milano.webp" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,6 +32,54 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.heldercarneiro.pt/#website",
+            "url": "https://www.heldercarneiro.pt/",
+            "name": "Hélder Carneiro",
+            "description": "Consultor oficial TM Leader Contract em Portugal",
+            "inLanguage": "pt-PT"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://www.heldercarneiro.pt/#person",
+            "name": "Hélder Carneiro",
+            "jobTitle": "Consultor oficial TM Leader Contract",
+            "url": "https://www.heldercarneiro.pt/",
+            "email": "mailto:geral@heldercarneiro.pt",
+            "image": "https://www.heldercarneiro.pt/assets/helder-carneiro.webp",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Paredes",
+              "addressRegion": "Porto",
+              "addressCountry": "PT"
+            },
+            "sameAs": ["https://www.linkedin.com/in/h%C3%A9lder-carneiro-677984a4"]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://www.heldercarneiro.pt/#business",
+            "name": "Hélder Carneiro, Consultor TM Leader Contract",
+            "url": "https://www.heldercarneiro.pt/",
+            "image": "https://www.heldercarneiro.pt/assets/tm/banner-milano.webp",
+            "telephone": "+351933612177",
+            "email": "geral@heldercarneiro.pt",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Paredes",
+              "addressRegion": "Porto",
+              "addressCountry": "PT"
+            },
+            "areaServed": "PT",
+            "description": "Consultoria e especificação de mobiliário contract TM Leader para hotelaria, restauração e projetos residenciais em Portugal."
+          }
+        ]
+      }
+    </script>
     <style>
       .home-hero {
         position: relative;
@@ -688,6 +753,17 @@
           animation: none;
         }
       }
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
     </style>
   </head>
   <body
@@ -697,7 +773,8 @@
 
     <main class="overflow-x-hidden">
       <!-- Hero — vídeo Milano recap (sem carrossel) -->
-      <section class="relative w-full overflow-hidden home-hero">
+      <section class="relative w-full overflow-hidden home-hero" aria-label="Apresentação">
+        <h1 class="visually-hidden">Hélder Carneiro, consultor oficial TM Leader Contract em Portugal</h1>
         <div class="home-hero__media" id="home-hero-media">
           <video
             id="home-hero-video"
@@ -706,12 +783,11 @@
             loop
             playsinline
             autoplay
-            preload="auto"
+            preload="metadata"
             poster="/assets/tm/banner-milano.webp"
             aria-label="Milano 2026, TM Leader Contract"
           >
             <source src="/assets/tm/hero-milano-2026.mp4" type="video/mp4" />
-            <source src="/assets/tm/hero-milano-2026.mov" type="video/quicktime" />
           </video>
         </div>
         <a href="#produtos" class="home-hero-scroll" aria-label="Descer para ver conteúdo">
@@ -883,11 +959,18 @@
         <div class="consultor__panel">
           <div class="consultor__grid">
             <div class="consultor__media">
-              <img
-                src="/assets/helder-carneiro.png"
-                alt="Hélder Carneiro, consultor TM Leader Contract"
-                data-parallax="6"
-              />
+              <picture>
+                <source srcset="/assets/helder-carneiro.webp" type="image/webp" />
+                <img
+                  src="/assets/helder-carneiro.png"
+                  alt="Hélder Carneiro, consultor TM Leader Contract"
+                  width="560"
+                  height="700"
+                  loading="lazy"
+                  decoding="async"
+                  data-parallax="6"
+                />
+              </picture>
             </div>
             <div class="consultor__body">
               <h2 class="consultor__name">Hélder Carneiro</h2>
@@ -1266,7 +1349,7 @@
         </button>
         <div class="bio-modal__header">
           <div class="bio-modal__avatar">
-            <img src="/assets/helder-carneiro.png" alt="Hélder Carneiro" />
+            <img src="/assets/helder-carneiro.webp" alt="Hélder Carneiro" width="144" height="144" loading="lazy" decoding="async" />
           </div>
           <div>
             <p class="bio-modal__eyebrow">O Consultor</p>
@@ -1322,13 +1405,13 @@
 
     <div id="footer-container"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
-    <script src="/js/components.js"></script>
-    <script src="/js/responsive-images.js"></script>
-    <script src="/js/exhibitions.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+    <script src="/js/components.js" defer></script>
+    <script src="/js/responsive-images.js" defer></script>
+    <script src="/js/exhibitions.js" defer></script>
+    <script src="/js/main.js" defer></script>
     <script>
       (function () {
         const modal = document.getElementById('bio-modal');

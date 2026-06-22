@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /company/
+
+Sitemap: https://www.heldercarneiro.pt/sitemap.xml
