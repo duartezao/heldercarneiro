@@ -537,6 +537,7 @@
         width: 100%;
         max-width: 640px;
         max-height: min(88vh, 760px);
+        min-height: 0;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -611,8 +612,21 @@
       }
       .bio-modal__content {
         flex: 1 1 auto;
+        min-height: 0;
+        overflow-x: hidden;
         overflow-y: auto;
-        padding: 0 clamp(1.75rem, 4vw, 2.5rem);
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+        padding: 0 clamp(1.75rem, 4vw, 2.5rem) 1.25rem;
+        scrollbar-gutter: stable;
+      }
+      .bio-modal__content::-webkit-scrollbar {
+        width: 6px;
+      }
+      .bio-modal__content::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.18);
+        border-radius: 999px;
       }
       .bio-modal__content p {
         font-size: 0.98rem;
@@ -1262,7 +1276,7 @@
             </p>
           </div>
         </div>
-        <div class="bio-modal__content">
+        <div class="bio-modal__content" data-lenis-prevent>
           <p>
             Português, nascido e criado em Rebordosa, no concelho de Paredes
             (Porto). Desde criança envolveu-se no universo do mobiliário através
@@ -1321,11 +1335,24 @@
         if (!modal) return;
         const openBtns = document.querySelectorAll('[data-bio-open]');
         const closeEls = modal.querySelectorAll('[data-bio-close]');
+        const scrollArea = modal.querySelector('.bio-modal__content');
         let lastFocused = null;
+
+        /* Impede o Lenis de capturar o scroll dentro do modal */
+        if (scrollArea) {
+          scrollArea.addEventListener('wheel', (e) => e.stopPropagation(), {
+            passive: true,
+          });
+          scrollArea.addEventListener('touchmove', (e) => e.stopPropagation(), {
+            passive: true,
+          });
+        }
 
         function open() {
           lastFocused = document.activeElement;
           modal.hidden = false;
+          document.documentElement.classList.add('bio-modal-open');
+          document.body.classList.add('bio-modal-open');
           document.body.style.overflow = 'hidden';
           if (window.RyuAnim && window.RyuAnim.lenis) window.RyuAnim.lenis.stop();
           const closeBtn = modal.querySelector('.bio-modal__close');
@@ -1333,7 +1360,10 @@
         }
         function close() {
           modal.hidden = true;
+          document.documentElement.classList.remove('bio-modal-open');
+          document.body.classList.remove('bio-modal-open');
           document.body.style.overflow = '';
+          if (scrollArea) scrollArea.scrollTop = 0;
           if (window.RyuAnim && window.RyuAnim.lenis)
             window.RyuAnim.lenis.start();
           if (lastFocused && lastFocused.focus) lastFocused.focus();

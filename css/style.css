@@ -4235,6 +4235,13 @@ html.lenis-active body {
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
+html.bio-modal-open.lenis-active,
+html.bio-modal-open.lenis-active body {
+  overflow: hidden !important;
+}
+html.bio-modal-open .lenis.lenis-stopped {
+  overflow: hidden !important;
+}
 .lenis.lenis-stopped {
   overflow: clip;
 }
@@ -4391,3 +4398,56 @@ html.ryu-menu-open body {
   }
 }
 
+/* Brand logo — navbar & footer */
+.brand-logo-link {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  transition: opacity 0.2s ease;
+}
+.brand-logo-link:hover {
+  opacity: 0.88;
+}
+.brand-logo-link--footer {
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: normal;
+}
+.brand-logo-tagline {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
+}
+.brand-logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+.brand-logo--nav {
+  width: 2.75rem;
+  height: auto;
+  max-width: none;
+  flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .brand-logo--nav {
+    width: 3rem;
+  }
+}
+.brand-logo--footer {
+  width: 10.5rem;
+  height: auto;
+  max-width: 100%;
+  object-position: left center;
+}
+@media (min-width: 768px) {
+  .brand-logo--footer {
+    width: 14rem;
+  }
+}

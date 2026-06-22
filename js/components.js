@@ -3,6 +3,12 @@
  * URLs: /, /company/, /projetos/, /contactos/, /projeto/?id=…
  */
 
+/** Símbolo HC inline — evita 404 se o asset separado não estiver deployado */
+const BRAND_SYMBOL_SVG = `<svg class="brand-logo brand-logo--nav" xmlns="http://www.w3.org/2000/svg" viewBox="281 189 342 364" fill="none" aria-hidden="true"><g transform="translate(0,897) scale(0.1,-0.1)" fill="#ffffff" stroke="none"><path d="M2870 5260 l0 -1760 1180 0 1180 0 0 590 0 590 -269 0 -268 0 -5 -360 c-2 -198 -6 -361 -9 -362 -2 -2 -289 -2 -636 0 l-633 3 0 1304 0 1305 640 0 640 0 0 -360 0 -360 270 0 270 0 0 585 0 585 -1180 0 -1180 0 0 -1760z"/><path d="M5600 6285 l0 -735 -630 0 -630 0 0 350 0 350 -262 -2 -263 -3 -3 -977 -2 -978 265 0 265 0 2 348 3 347 625 0 625 0 3 -742 2 -743 285 0 285 0 0 1760 0 1760 -285 0 -285 0 0 -735z"/></g></svg>`;
+
+const LINKEDIN_URL = 'https://www.linkedin.com/in/h%C3%A9lder-carneiro-677984a4';
+const LINKEDIN_ICON_SVG = `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`;
+
 function resolveNavSelection() {
   const pathname = window.location.pathname || '/';
   const parts = pathname.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
@@ -36,8 +42,8 @@ function applyNavbarActiveStates() {
 document.addEventListener('DOMContentLoaded', () => {
   const navbarHTML = `
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[720px] rounded-[35px] nav-glass pl-6 pr-2 py-2 flex items-center justify-between">
-      <a href="/" class="leading-none" aria-label="Hélder Carneiro, início">
-        <span class="text-white font-semibold text-sm tracking-tight" style="font-family: 'MuseoModerno', sans-serif;">Hélder Carneiro</span>
+      <a href="/" class="brand-logo-link shrink-0" aria-label="Hélder Carneiro, início">
+        ${BRAND_SYMBOL_SVG}
       </a>
       <div class="hidden md:flex items-center gap-8">
         <a data-nav="projetos" href="/projetos/" class="nav-link-desktop text-base font-medium text-white transition-opacity hover:opacity-90">Exibições</a>
@@ -58,9 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </nav>
     <div id="mobile-menu" class="ryu-mobile-menu" aria-hidden="true">
       <div class="ryu-mobile-menu__inner">
-        <a href="/" class="ryu-mobile-menu__logo mb-6" aria-label="Hélder Carneiro, início">
-          <span class="text-white font-semibold text-xl" style="font-family: 'MuseoModerno', sans-serif;">Hélder Carneiro</span>
-        </a>
         <nav class="ryu-mobile-menu__links">
           <a data-nav="projetos" href="/projetos/" class="nav-link-mobile">Exibições</a>
           <a data-nav="company" href="https://www.tmleadercontract.com/en/" target="_blank" rel="noopener noreferrer" class="nav-link-mobile">Company</a>
@@ -82,9 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="max-w-[1200px] mx-auto px-6 md:px-10 pt-20 pb-10">
         <div class="grid grid-cols-1 md:grid-cols-[1.5fr_0.75fr_0.75fr] gap-10 md:gap-20">
           <div>
-            <a href="/" class="inline-block mb-6" aria-label="Hélder Carneiro, início">
-              <span class="text-white font-semibold text-xl block" style="font-family: 'MuseoModerno', sans-serif;">Hélder Carneiro</span>
-              <span class="text-white/50 text-xs tracking-widest uppercase mt-1 block">TM Leader Contract · Portugal</span>
+            <a href="/" class="brand-logo-link brand-logo-link--footer mb-5" aria-label="Hélder Carneiro, início">
+              <img src="/assets/logo_helder_carneiro.svg" alt="Hélder Carneiro" class="brand-logo brand-logo--footer" width="280" height="80" decoding="async">
+              <span class="brand-logo-tagline">TM Leader Contract · Portugal</span>
             </a>
             <p class="text-white/60 max-w-[400px] leading-relaxed mb-8">
               Hélder Carneiro, consultor oficial TM Leader Contract em Portugal. Mobiliário e soluções contract para projetos residenciais, hotelaria e hospitality.
@@ -104,6 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
               <li class="text-white/60 leading-relaxed">Paredes<br>Porto, Portugal</li>
               <li><a href="mailto:geral@heldercarneiro.pt" class="text-white/60 hover:text-white transition-colors">geral@heldercarneiro.pt</a></li>
               <li><a href="https://www.tmleadercontract.com" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors">tmleadercontract.com</a></li>
+              <li class="pt-2">
+                <p class="text-white/60 text-sm mb-3">Redes sociais</p>
+                <a href="${LINKEDIN_URL}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white/70 hover:bg-white hover:text-black transition-colors" aria-label="LinkedIn do Hélder Carneiro">
+                  ${LINKEDIN_ICON_SVG}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
