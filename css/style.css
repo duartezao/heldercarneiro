@@ -4408,6 +4408,14 @@ html.ryu-menu-open body {
 .brand-logo-link:hover {
   opacity: 0.88;
 }
+.brand-logo-link--nav {
+  isolation: isolate;
+  filter: none;
+  -webkit-filter: none;
+}
+.brand-logo-link--nav:hover {
+  opacity: 1;
+}
 .brand-logo-link--footer {
   flex-direction: column;
   align-items: flex-start;
@@ -4434,6 +4442,16 @@ html.ryu-menu-open body {
   height: auto;
   max-width: none;
   flex-shrink: 0;
+  display: block;
+  filter: none;
+  -webkit-filter: none;
+  box-shadow: none;
+  text-shadow: none;
+  shape-rendering: geometricPrecision;
+  transform: translateZ(0);
+}
+.brand-logo--nav path {
+  filter: none;
 }
 @media (min-width: 768px) {
   .brand-logo--nav {
